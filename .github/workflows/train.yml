@@ -25,9 +25,14 @@ jobs:
       - name: Run MLProject
         run: |
           cd MLProject
-          # hapus run ID lama sebelum jalanin MLflow
           python -c "import os; os.environ.pop('MLFLOW_RUN_ID', None)"
           mlflow run . --env-manager local
+
+      - name: Run modelling.py
+        run: |
+          cd MLProject
+          python -c "import os; os.environ.pop('MLFLOW_RUN_ID', None)"
+          python modelling.py
 
       - name: Upload MLflow artifacts
         uses: actions/upload-artifact@v3
