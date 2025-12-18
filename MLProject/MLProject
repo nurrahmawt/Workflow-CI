@@ -1,6 +1,7 @@
-name: HousePriceModel
+name: MLProject
+
 conda_env: conda.yaml
+
 entry_points:
   main:
-    parameters: {}
     command: "python modelling.py"
