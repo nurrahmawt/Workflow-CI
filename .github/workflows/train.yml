@@ -22,7 +22,7 @@ jobs:
       - name: Run MLflow Project
         run: |
           # Jalanin mlflow run
-          mlflow run MLProject/ --no-conda
+          mlflow run MLProject/ --env-manager local
 
       - name: Upload Artifacts
         if: always() # Tetap upload meskipun step sebelumnya error buat debugging
