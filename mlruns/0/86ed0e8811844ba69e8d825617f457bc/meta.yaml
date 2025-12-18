@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/vscode/MSML/Eksperimen_SML_Nur%20Rahmawati/Workflow-CI/mlruns/0/86ed0e8811844ba69e8d825617f457bc/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 86ed0e8811844ba69e8d825617f457bc
+run_name: painted-auk-352
+run_uuid: 86ed0e8811844ba69e8d825617f457bc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1766044585234
+status: 1
+tags: []
+user_id: asus

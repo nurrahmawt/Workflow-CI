@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/vscode/MSML/Eksperimen_SML_Nur%20Rahmawati/Workflow-CI/mlruns/0/48120ed104c44b85a40c9430e5c9badd/artifacts
+end_time: 1766044961866
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 48120ed104c44b85a40c9430e5c9badd
+run_name: amazing-tern-667
+run_uuid: 48120ed104c44b85a40c9430e5c9badd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1766044956164
+status: 4
+tags: []
+user_id: asus

@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/vscode/MSML/Eksperimen_SML_Nur%20Rahmawati/Workflow-CI/mlruns/0/42a228a49c164fd6a5c2fce95111e500/artifacts
+end_time: 1766045558784
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 42a228a49c164fd6a5c2fce95111e500
+run_name: skillful-newt-548
+run_uuid: 42a228a49c164fd6a5c2fce95111e500
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1766045543520
+status: 3
+tags: []
+user_id: asus
