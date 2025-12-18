@@ -24,8 +24,9 @@ jobs:
           # Jalanin mlflow run
           mlflow run MLProject/ --no-conda
 
-      - name: Upload MLflow Artifacts (Poin Skilled)
+      - name: Upload Artifacts
+        if: always() # Tetap upload meskipun step sebelumnya error buat debugging
         uses: actions/upload-artifact@v4
         with:
-          name: mlflow-results
+          name: mlflow-data
           path: mlruns/
