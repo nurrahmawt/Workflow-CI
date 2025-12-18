@@ -1,9 +1,6 @@
-name: HousePriceProject
-
+name: HousePriceModel
 conda_env: conda.yaml
-
 entry_points:
   main:
-    parameters:
-      dataset_path: {type: str, default: "houseprices_preprocessing/house_data_processed.csv"}
+    parameters: {}
     command: "python modelling.py"

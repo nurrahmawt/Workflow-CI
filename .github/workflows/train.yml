@@ -1,4 +1,4 @@
-name: MLflow CI
+name: MLflow Training
 
 on:
   push:
@@ -20,12 +20,16 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install mlflow pandas scikit-learn
+          pip install mlflow==2.22.0 pandas scikit-learn
 
       - name: Run MLProject
-        run: mlflow run MLProject --env-manager local
+        run: |
+          cd MLProject
+          # hapus run ID lama sebelum jalanin MLflow
+          python -c "import os; os.environ.pop('MLFLOW_RUN_ID', None)"
+          mlflow run . --env-manager local
 
-      - name: Upload model artifacts
+      - name: Upload MLflow artifacts
         uses: actions/upload-artifact@v3
         with:
           name: mlflow-model

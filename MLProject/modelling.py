@@ -1,5 +1,5 @@
 import os
-os.environ.pop("MLFLOW_RUN_ID", None)
+os.environ.pop("MLFLOW_RUN_ID", None)  # bersihin run ID lama
 
 import pandas as pd
 import mlflow
@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
 
-mlflow.set_tracking_uri("file:///tmp/mlruns")
+mlflow.set_tracking_uri("file:///tmp/mlruns") 
 
 # Load data
 df = pd.read_csv("houseprices_preprocessing/house_data_processed.csv")
@@ -37,12 +37,10 @@ with mlflow.start_run():
         input_example=input_example
     )
 
+    # Prediksi & log metric
     y_pred = model.predict(X_test)
-    mse = mean_squared_error(y_test, y_pred)
-    r2 = r2_score(y_test, y_pred)
+    mlflow.log_metric("mse", mean_squared_error(y_test, y_pred))
+    mlflow.log_metric("r2", r2_score(y_test, y_pred))
 
-    mlflow.log_metric("mse", mse)
-    mlflow.log_metric("r2", r2)
-
-    print("MSE:", mse)
-    print("R2:", r2)
+    print("MSE:", mean_squared_error(y_test, y_pred))
+    print("R2:", r2_score(y_test, y_pred))
