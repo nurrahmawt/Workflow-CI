@@ -6,10 +6,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
 
-# JANGAN ADA: mlflow.set_tracking_uri
-# JANGAN ADA: os.environ.pop("MLFLOW_RUN_ID")
-# JANGAN ADA: with mlflow.start_run()
-
 # Load data
 df = pd.read_csv("houseprices_preprocessing/house_data_processed.csv")
 X = df.drop("House_Price", axis=1)
@@ -17,7 +13,6 @@ y = df["House_Price"]
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# LANGSUNG TRAINING & LOG (MLflow Run sudah otomatis aktif dari command line)
 model = LinearRegression()
 model.fit(X_train, y_train)
 
