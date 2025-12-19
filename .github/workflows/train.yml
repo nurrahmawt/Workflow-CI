@@ -48,6 +48,17 @@ jobs:
             -n "${{ secrets.DOCKERHUB_USERNAME }}/house-price-model:latest" \
             --enable-mlserver
 
+      - name: Save Model Permanently (Skilled Criterion 3)
+        run: |
+          mkdir -p models_versioning
+          find mlruns/ -name "*.pkl" -exec cp {} models_versioning/model.pkl \;
+          
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add models_versioning/model.pkl
+          git commit -m "Update permanent model version [skip ci]" || echo "No changes"
+          git push
+
       - name: Push to Docker Hub
         run: |
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/house-price-model:latest
